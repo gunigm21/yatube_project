@@ -23,6 +23,9 @@
       {% include 'includes/header.html' %}
     </header>
     <main>
+      {% block h1 %}
+      <h1>{{group.title}}</h1>
+      {% endblock %}
       {% for post in posts %}
   <ul>
     <li>
@@ -33,7 +36,8 @@
     </li>
   </ul>
   <p>{{ post.text }}</p>    
-  <a href="">все записи группы</a>
+{% block groups %}
+{%endblock%}
   {% if not forloop.last %}<hr>{% endif %}
 {% endfor %}
       {% block content %}

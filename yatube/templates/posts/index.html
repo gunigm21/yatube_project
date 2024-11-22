@@ -1,5 +1,13 @@
 <!DOCTYPE html> <!-- Используется html 5 версии -->
 {% extends 'base.html' %}
+{% block h1 %}
+<h1>Последние обновления на сайте</h1>
+{% endblock %}
 {% block content %}
 {{ text }}
 {% endblock %}  
+{% block groups %}
+{% if post.group %}    
+   <a href="{% url 'posts:posts_detail' post.group.slug %}">все записи группы</a>
+{% endif %} 
+{%endblock%}

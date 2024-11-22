@@ -1,8 +1,11 @@
-<!DOCTYPE html> <!-- Используется html 5 версии -->
+<!DOCTYPE html>
 {% extends 'base.html' %}   
 {% block title %}
-    <title>Лев Толстой – зеркало русской революции.</title>
+    <title>{{group.title}}</title>
 {% endblock %}  
 {% block content %}
-{{ text }}
+{{ text }}    
+  {% if post.group %}   
+    <a href="{% url 'posts:posts_detail' post.group.slug %}">все записи группы</a>
+  {% endif %} 
 {% endblock %}
