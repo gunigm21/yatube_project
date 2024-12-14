@@ -26,3 +26,8 @@ class Post(models.Model):
         related_name='group'
     )
 
+    def __str__(self):
+        return str(self.id)
+
+
+

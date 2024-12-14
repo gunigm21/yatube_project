@@ -5,7 +5,4 @@
 {% endblock %}  
 {% block content %}
 {{ text }}    
-  {% if post.group %}   
-    <a href="{% url 'posts:posts_detail' post.group.slug %}">все записи группы</a>
-  {% endif %} 
 {% endblock %}
