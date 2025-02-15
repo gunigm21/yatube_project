@@ -1,9 +1,28 @@
 <!DOCTYPE html> <!-- Используется html 5 версии -->
 {% extends 'base.html' %}
-{% block h1 %}
+{% block h1 %} 
+<div class="container">
 <h1>Последние обновления на сайте</h1>
+</div>
 {% endblock %}
 {% block content %}
+{% for post in page_obj %}
+<div class="container">
+<ul>
+  <li>
+    Автор: {{ post.author.get_full_name }}
+  </li>
+  <li>
+    Дата публикации: {{ post.pub_date|date:"d E Y" }}
+  </li>
+</ul>
+<p>{{ post.text }}</p>    
+</div>
+{% if not forloop.last %}<hr>{% endif %}
+{% endfor %}
+<div class="container">
+{% include 'posts/includes/paginator.html' %}
+</div>
 {{ text }}
 <div class="container">
    <h1>Поиск по записям</h1>

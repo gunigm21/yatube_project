@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import Group, Post
-
-admin.site.register(Post)
-admin.site.register(Group)
+from .models import Group, Post, Comment, Follow
 
 class PostAdmin(admin.ModelAdmin):
     list_display = (
@@ -17,3 +14,7 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('pub_date',)
     empty_value_display = '-пусто-'
 
+admin.site.register(Post, PostAdmin)
+admin.site.register(Group)
+admin.site.register(Comment)
+admin.site.register(Follow)
