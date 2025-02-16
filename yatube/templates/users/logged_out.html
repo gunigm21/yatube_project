@@ -3,11 +3,15 @@
 <div class="row justify-content-center">
   <div class="col-md-8 p-5">
     <div class="card">
-      <form action="{% url 'users:logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Выйти</button>
-    </form>    
-    </div>
-  </div>
-</div>
+      <div class="card-header">
+        Выход
+      </div>
+      <div class="card-body">
+        <p>
+          Вы вышли из своей учётной записи. Ждём вас снова!
+        </p>
+      </div> 
+    </div> 
+  </div> 
+</div> 
 {% endblock %} 
